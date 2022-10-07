@@ -1,0 +1,14 @@
+.sCut {
+  display: flex;
+  justify-content: center;
+}
+.sCut .container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
