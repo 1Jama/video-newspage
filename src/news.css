@@ -1,14 +1,26 @@
-.sCut {
-  display: flex;
-  justify-content: center;
-}
-.sCut .container {
-  margin-top: 40px;
+.container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
   justify-content: center;
   align-items: center;
+  align-content: center;
+}
+
+.newsStory .newsImage {
+  width: 150px;
+  height: 150px;
+}
+.newsStory {
+  margin: 8px;
+  width: 300px;
+  height: 300px;
+  outline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+
   align-content: center;
 }
