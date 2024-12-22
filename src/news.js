@@ -8,8 +8,7 @@ import { extract } from 'article-parser';
 
 const NewsPage = () => {
   const baseURL =
-    'http://api.mediastack.com/v1/news?access_key=' +
-    process.env.REACT_APP_ACCESS_KEY;
+    'https://newsapi.org/v2/top-headlines?country=us&apiKey=abd3575c15954584b3129988f5042a8b';
   const [newsData, setNewsData] = useState();
   const [newUrl, setNewUrl] = useState();
   const [open, setOpen] = useState(false);
@@ -19,17 +18,10 @@ const NewsPage = () => {
   });
 
   useEffect(() => {
-    axios
-      .get(baseURL, {
-        params: {
-          languages: 'en',
-          limit: 30,
-          offset: 30,
-        },
-      })
-      .then((response) => {
-        setNewsData(response.data.data);
-      });
+    axios.get(baseURL).then((response) => {
+      setNewsData(response.data.articles);
+      console.log(response.data.articles);
+    });
   }, []);
 
   async function getData(aUrl) {
@@ -38,8 +30,6 @@ const NewsPage = () => {
     await extract(x).then((article) => {
       setNewArticle(article);
     });
-
-    console.log(newArticle);
   }
 
   const openPopUp = (e) => {
@@ -61,11 +51,19 @@ const NewsPage = () => {
               <div>
                 <img
                   className='newsImage'
-                  src={newsStory.image ? newsStory.image : placeholder}
+                  src={
+                    newsStory.urlToImage ? newsStory.urlToImage : placeholder
+                  }
                   alt=''
                 />
 
                 <p className='name'>{newsStory.title}</p>
+                <p className='author'>
+                  {newsStory.author} via{' '}
+                  {newsStory.source.id
+                    ? newsStory.source.id
+                    : newsStory.source.name}
+                </p>
               </div>
             </a>
           </div>
@@ -75,7 +73,8 @@ const NewsPage = () => {
         trigger={open}
         setTrigger={setOpen}
         articleTitle={newArticle.title}
-        articleContent={newArticle.content}
+        articleDescription={newArticle.description}
+        articleUrl={newArticle.url}
       />
     </div>
   );
