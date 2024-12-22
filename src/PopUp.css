@@ -1,0 +1,32 @@
+.page-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.articleBoxContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.formContainer {
+  margin-top: 10vh;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  max-height: 70rem;
+  max-width: 70rem;
+  border-radius: 0.5em;
+  overflow: scroll;
+}
+Button {
+  margin-top: 5px;
+}
+img {
+  max-width: 50%;
+  max-height: 25vh;
+}
