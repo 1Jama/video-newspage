@@ -6,7 +6,7 @@ import placeholder from './placeholder.jpg';
 import PopUp from './PopUp';
 import { extract } from 'article-parser';
 
-const NewsPage = () => {
+const NewsPage = (props) => {
   const baseURL =
     'https://newsapi.org/v2/top-headlines?country=us&apiKey=abd3575c15954584b3129988f5042a8b';
   const [newsData, setNewsData] = useState();
