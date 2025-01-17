@@ -1,0 +1,11 @@
+-tab nav for home page filtering, things like top headlines, or search 
+-top headlines gets things like search, country[top headlines endpoint]
+-search gets text field, dates, language [everything endpoint]
+-maybe use sources endpoint to get languages and country to fill arrays, no0t that deep idk
+-sources api has categories for top headlines endpoint
+-can actually search terms for top headlines and everything i think everything is just when you wanna filter by date?
+-add sortBy
+-return 100 results and add pages
+-everything does work with category just top headline
+-i think i use everything endpoint to search and top headlines if theyre not searching maybe
+-ADD NEWS component inside home component and pass prop to it that way
