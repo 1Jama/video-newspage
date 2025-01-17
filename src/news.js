@@ -8,7 +8,7 @@ import { extract } from 'article-parser';
 
 const NewsPage = (props) => {
   const baseURL =
-    'https://newsapi.org/v2/top-headlines?country=us&apiKey=abd3575c15954584b3129988f5042a8b';
+    'https://newsapi.org/v2/everything?apiKey=abd3575c15954584b3129988f5042a8b';
   const [newsData, setNewsData] = useState();
   const [newUrl, setNewUrl] = useState();
   const [open, setOpen] = useState(false);
