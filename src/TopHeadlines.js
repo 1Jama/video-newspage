@@ -119,35 +119,34 @@ const TopHeadlines = (props) => {
     'technology',
   ];
 
-  const language = [
-    'en',
-    'ar',
-    'de',
-    'es',
-    'fr',
-    'he',
-    'it',
-    'nl',
-    'no',
-    'pt',
-    'ru',
-    'sv',
-    'ud',
-    'zh',
-  ];
+  const language = {
+    English: 'en',
+    Arabic: 'ar',
+    German: 'de',
+    Spanish: 'es',
+    French: 'fr',
+    Hebrew: 'he',
+    Italian: 'it',
+    Dutch: 'nl',
+    Norwegian: 'no',
+    Portuguese: 'pt',
+    Russian: 'ru',
+    Swedish: 'sv',
+    Chinese: 'zh',
+  };
 
   const handleSubmit = (e) => {
     if (e) e.preventDefault();
     const q = this.input.value;
     console.log('Your name is', q);
   };
-
+  //fix language dropdown object map
   return (
     <div className='container'>
       <div className='newsFilterBox'>
         <select>
           <option> Language </option>
-          {language.map((language) => (
+          {language.keys(language).map((keyName, i) => (
             <option value={language}>{language}</option>
           ))}
         </select>
